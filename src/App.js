@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Router from "./Router";
+import { withCookies } from "react-cookie";
 
 class App extends Component {
   render() {
@@ -12,4 +13,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default withCookies(App);
