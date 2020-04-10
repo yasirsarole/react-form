@@ -25,25 +25,38 @@ code {
   flex-direction: column;
 }
 
-.login > a {
+.login > a,
+.register-container > a {
   margin-bottom: 20px;
 }
 
-.login form {
+.login form,
+.register-container form {
   display: inline-flex;
   flex-direction: column;
 }
 
-.login form input {
+.login form input,
+.register-container form input {
   margin-bottom: 10px;
 }
 
 .login-note,
-.login .error {
+.login .error,
+.required-note,
+.register-container .error {
   font-size: 12px;
   margin-bottom: 10px;
 }
 
-.login .error {
+.login .error,
+.required-note,
+.register-container .error {
   color: red;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

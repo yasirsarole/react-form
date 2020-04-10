@@ -56,7 +56,9 @@ const LoginForm = (props) => {
         />
         <input type="submit" value="Login" />
       </form>
-      <span className="login-note">Login with any username and password</span>
+      <span className="login-note">
+        Please register, if not already registered
+      </span>
       {errorMsg && <span className="error">{errorMsg}</span>}
     </div>
   );
