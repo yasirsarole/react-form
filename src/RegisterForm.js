@@ -37,16 +37,27 @@ const RegisterForm = (props) => {
     e.preventDefault();
     const emailRegex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     setErrorMsg("");
+    let registerFlag = true;
+    const currentUserNames =
+      Object.keys(JSON.parse(localStorage.getItem("data"))) || [];
+
+    // check duplicate username condition
+    if (currentUserNames.length && currentUserNames.indexOf(userName) > -1) {
+      setErrorMsg("Duplicate user name provided");
+      registerFlag = false;
+    }
 
     if (email && !emailRegex.test(email)) {
-      setErrorMsg("Please enter valid email address, format - xy@xy.co");
+      setErrorMsg("Please enter valid email address, format - x@y.co");
+      registerFlag = false;
     }
 
     if (phoneNumber && phoneNumber.length > 10) {
       setErrorMsg("Only 10 numbers are allowed");
+      registerFlag = false;
     }
 
-    if (name && phoneNumber && email && userName && password) {
+    if (name && phoneNumber && email && userName && password && registerFlag) {
       const userData = { name, phoneNumber, email, userName, password };
 
       // check if browser supports local storage

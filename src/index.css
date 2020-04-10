@@ -45,15 +45,19 @@ code {
 .login-note,
 .login .error,
 .required-note,
-.register-container .error {
+.register-container .error,
+.user-data .error {
   font-size: 12px;
   margin-bottom: 10px;
 }
 
 .login .error,
 .required-note,
-.register-container .error {
+.register-container .error,
+.user-data .error {
   color: red;
+  display: block;
+  text-align: center;
 }
 
 .register-container {
@@ -85,4 +89,14 @@ code {
 
 .user-details div .value {
   text-decoration: underline;
+}
+
+.user-details form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.user-data > a {
+  margin-bottom: 20px;
 }
