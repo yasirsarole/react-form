@@ -26,7 +26,8 @@ code {
 }
 
 .login > a,
-.register-container > a {
+.register-container > a,
+.user-data .links {
   margin-bottom: 20px;
 }
 
@@ -59,4 +60,29 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.user-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-data .links a:first-of-type {
+  margin-right: 30px;
+}
+
+.user-details div {
+  margin-bottom: 10px;
+}
+
+.user-details div .type {
+  margin-right: 10px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.user-details div .value {
+  text-decoration: underline;
 }

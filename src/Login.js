@@ -36,7 +36,7 @@ const LoginForm = (props) => {
           setErrorMsg("Login failed: Invalid username or password");
         }
       } else {
-        setErrorMsg("User name does not exist");
+        setErrorMsg("Login failed: Invalid username or password");
       }
     }
   };
