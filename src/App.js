@@ -5,7 +5,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router />
+        <div className="wrapper">
+          <Router />
+        </div>
       </div>
     );
   }
