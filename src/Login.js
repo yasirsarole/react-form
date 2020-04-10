@@ -22,11 +22,22 @@ const LoginForm = (props) => {
       setErrorMsg("Username and password is required");
       Auth.signout();
     } else {
-      Auth.authenticate();
-      setErrorMsg("");
+      const registeredData = JSON.parse(localStorage.getItem("data")) || {};
+      const registeredUsers = Object.keys(registeredData);
 
-      setCookie("name", userName, { path: "/" });
-      if (cookies) props.history.push("/");
+      if (registeredUsers.indexOf(userName) > -1) {
+        if (userPassword === registeredData[userName]["password"]) {
+          Auth.authenticate();
+          setErrorMsg("");
+
+          setCookie("name", userName, { path: "/" });
+          if (cookies) props.history.push("/");
+        } else {
+          setErrorMsg("Login failed: Invalid username or password");
+        }
+      } else {
+        setErrorMsg("User name does not exist");
+      }
     }
   };
 
